@@ -1,0 +1,7 @@
+# Obsidian
+.obsidian/
+.trash/
+*.tmp
+Thumbs.db
+Desktop.ini
+.DS_Store

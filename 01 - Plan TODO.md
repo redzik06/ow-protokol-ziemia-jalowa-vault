@@ -110,6 +110,8 @@ SORT file.name ASC
 
 - [x] Pakiet `campaign/`: `Missions/__PZ/01..15/{main.src,sources.txt,description.txt,texts.txt}` + `Campaigns/PZ/{missions.dat,headers.wri,Txt01..15.wri}` (+`#pol`) + `Texts/LangPOL.wri` — generator `tools/gen_campaign.py` #fabula
 - [x] Kodowania jak oryginał: misje cp1250, kampania UTF-16LE+BOM; `→`→`->` w SAIL/texts; pokrycie identów 100% #fabula
+- [x] SAIL final jak oryginał (start.src): `DialogueOn/Off` + `ChangeMissionObjectives('OBJ_NN')` + `SaveForQuickRestart` w 15/15 Starting, OBJ_ w texts — weryfikacja 15/15 #fabula
+- [ ] Dysk C: pełny (0 B) — wyczyszczono 3,6 GB starych tempów 2026-09-14. Pilnować miejsca (mapy .bin rosną)! #infra
 - [ ] Mapy `.map` do Edytora generują `map.txt/map.bin2/nodes/sectors` w `Missions/__PZ/NN/` — potem pakowanie OWP (PakView) na release #mapa
 
 > Real mapy `Faza 5 A` ODBLOKOWANE — Edytor i XichtEd w Steam OW. Instrukcje `.map.txt` 15/15 mają listy stref SAIL.

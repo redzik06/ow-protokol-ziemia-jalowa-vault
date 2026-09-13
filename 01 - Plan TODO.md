@@ -83,7 +83,7 @@ SORT file.name ASC
 > Przed mapami — sucha, po mapach — w grze.
 
 - [x] **4.1** Audit placeholderów → real implement (cele `goal_state`, `Hint`, branch, overdue) #sail
-- [ ] **4.2** Korekta PL `ąćęłńóśźżć` w `campaign.txt:7` `characters.txt:21` `strings/texts_pl.txt:1` + 0 `Włóczęga` poza Poprawkami #tekst #przed-mapami
+- [x] **4.2** Korekta PL 2026-09-14: skan 2-pass (małe + wielkie litery) `campaign.txt` `characters.txt` `strings/texts_pl.txt` 15 SAIL — 0 literówek, 0 `Włóczęga` poza Poprawkami #tekst
 - [ ] **4.3** Solucje 15 PDF do REGENERACJI (mechaniki zmienione: SetFuel, sekundy, branch) — `docs/solucje/*.pdf` #tekst
 - [ ] **4.4** Voices 81 mapowań `strings/voices_ai.json:1` `male/female` + `russian/arabic PL` — odsłuch próbek 3/voice bez gry #dubbing #przed-mapami
 - [ ] **4.5** Avatary: 16 twarzy w **XichtEd** (GUI) wg tabeli 1-16 `06 Grafika/00 - Avatary - Specyfikacja.md`, SAIL wpięty (`hc_gallery/hc_face_number`), id galerii do potwierdzenia po eksporcie #grafika #xichted

@@ -51,6 +51,15 @@ un_humans[0] := CreateHuman;
 4. W SAIL dopisać reszcie misji `hc_gallery/hc_face_number` wg tabeli (01 już ma).
 5. Test: `01_misja.sail` `ForceSay` — twarz ma się pojawić w dialogu.
 
+## Format w grze (zweryfikowany 2026-09-14, mod Kx z Workshopa)
+
+- Części twarzy: `Mods/<mod>/{male,female,ape}/<part>/` gdzie part = `obo` brwi, `oci` oczy,
+  `pus` usta, `vla` włosy, `vou` zarost, `sat` ..., `uch` uszy, `poz` tło/pozy.
+  Pliki `name_s01` (+`.bmp` podglądy). Nasi: 11× male, 4× female (Elena/Maya/Alya/Lina),
+  1× ape (Ur), Echo-baz jako glitch (fallback `ForceSayNoFace`).
+- Galeria: pliki `.xgl` (`GALLERY → PORTRET → PAK male → PORT_COMPONENTS → TYP/COMP/BARWY`).
+- Tła per nacja w `.ini` moda: `XichtBack_AR/US/RU` — u nas domyślne (opcjonalnie własne).
+
 ## Pliki robocze (nie trafiają do gry)
 
 - `graphics/faces/*.bmp` (placeholdery 96×96) + `prompts_ow_style.txt` (16 prompty AI, seed 4521) — tylko **referencja koncepcyjna** do komponowania twarzy w XichtEd, nie assety gry.

@@ -112,6 +112,11 @@ SORT file.name ASC
 - [x] Kodowania jak oryginał: misje cp1250, kampania UTF-16LE+BOM; `→`→`->` w SAIL/texts; pokrycie identów 100% #fabula
 - [x] SAIL final jak oryginał (start.src): `DialogueOn/Off` + `ChangeMissionObjectives('OBJ_NN')` + `SaveForQuickRestart` w 15/15 Starting, OBJ_ w texts — weryfikacja 15/15 #fabula
 - [ ] Dysk C: pełny (0 B) — wyczyszczono 3,6 GB starych tempów 2026-09-14. Pilnować miejsca (mapy .bin rosną)! #infra
+- [x] Full review plików gry 2026-09-14: tilesety = wartości Edytora (nazwy w specach to wskazówki, nie stałe) #review
+- [x] Broń nation-matched (ru+ru_gun, ar+ar_gun), 30/30 stałych istnieje, `mat_taken` to nasza zmienna #review
+- [x] LangPOL.wri tylko numeryczne ID — nasz usunięty, OBJ_ w texts.txt misji #review
+- [x] Dźwięki (Sound/Hudba + Mod_Music) i Interface/ — odłożone, domyślne silnika wystarczą #review
+- [x] Twarze: format części + `.xgl` + `XichtBack_*` z moda Kx dopisane do speca #review
 - [ ] Mapy `.map` do Edytora generują `map.txt/map.bin2/nodes/sectors` w `Missions/__PZ/NN/` — potem pakowanie OWP (PakView) na release #mapa
 - [x] Układ `Mods/Protokol/` jak Niezniszczalni: `Missions/__PZ/` + `Campaigns/` + `Texts/` na topie (NIE `campaign/` subfolder) — sync poprawiony #infra
 

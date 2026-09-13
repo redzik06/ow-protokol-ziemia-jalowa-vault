@@ -102,9 +102,15 @@ SORT file.name ASC
 
 ## Najbliższe 3 zadania (Edytor + XichtEd DOSTĘPNE — Steam OW)
 
-- [ ] **NEXT A1** Zbudować `01_ostatnia_iskra.map` 72x72 w Edytorze (strefy: area_ewakuacja, area_dziennik) + F9 `01_misja.sail` #next #mapa
+- [ ] **NEXT A1** Zbudować `01_ostatnia_iskra.map` 72x72 w Edytorze (strefy: area_ewakuacja, area_dziennik) + F9 `main.src` w `campaign/Missions/__PZ/01/` #next #mapa
 - [ ] **NEXT 2.7** Kompilacja F9 02-15 po kolei, poprawki wg flag w kodzie #next #sail
 - [ ] **NEXT 4.5** 16 twarzy w XichtEd (tabela 1-16), eksport galerii, potwierdzić `hc_gallery` id #next #grafika
+
+## Fabuła wpięta (2026-09-14, wzorzec: Niezniszczalni + start.src)
+
+- [x] Pakiet `campaign/`: `Missions/__PZ/01..15/{main.src,sources.txt,description.txt,texts.txt}` + `Campaigns/PZ/{missions.dat,headers.wri,Txt01..15.wri}` (+`#pol`) + `Texts/LangPOL.wri` — generator `tools/gen_campaign.py` #fabula
+- [x] Kodowania jak oryginał: misje cp1250, kampania UTF-16LE+BOM; `→`→`->` w SAIL/texts; pokrycie identów 100% #fabula
+- [ ] Mapy `.map` do Edytora generują `map.txt/map.bin2/nodes/sectors` w `Missions/__PZ/NN/` — potem pakowanie OWP (PakView) na release #mapa
 
 > Real mapy `Faza 5 A` ODBLOKOWANE — Edytor i XichtEd w Steam OW. Instrukcje `.map.txt` 15/15 mają listy stref SAIL.
 

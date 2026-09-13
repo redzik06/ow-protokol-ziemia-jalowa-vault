@@ -113,6 +113,7 @@ SORT file.name ASC
 - [x] SAIL final jak oryginał (start.src): `DialogueOn/Off` + `ChangeMissionObjectives('OBJ_NN')` + `SaveForQuickRestart` w 15/15 Starting, OBJ_ w texts — weryfikacja 15/15 #fabula
 - [ ] Dysk C: pełny (0 B) — wyczyszczono 3,6 GB starych tempów 2026-09-14. Pilnować miejsca (mapy .bin rosną)! #infra
 - [ ] Mapy `.map` do Edytora generują `map.txt/map.bin2/nodes/sectors` w `Missions/__PZ/NN/` — potem pakowanie OWP (PakView) na release #mapa
+- [x] Układ `Mods/Protokol/` jak Niezniszczalni: `Missions/__PZ/` + `Campaigns/` + `Texts/` na topie (NIE `campaign/` subfolder) — sync poprawiony #infra
 
 > Real mapy `Faza 5 A` ODBLOKOWANE — Edytor i XichtEd w Steam OW. Instrukcje `.map.txt` 15/15 mają listy stref SAIL.
 

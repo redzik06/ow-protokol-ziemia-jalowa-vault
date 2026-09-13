@@ -17,9 +17,9 @@ zaleznosc: "[[01 - Plan TODO|Plan TODO]] · [[00 - Mapy Przegląd|Mapy]] · [[99
 - Nowa historia nie związana z ori — `05 Fabuła/00 - Oś Fabuły.md`, terminologia wg `00 - Poprawki po Gemini — Terminologia OW.md` (HT `us_heavy_tracked`, `Apemen`, `kryształ Alaskitu`, brak `Włóczęga/Szakale/RNG`).
 - Dubbing = różne głosy AI nie lektor: `06 Dubbing/00 - Casting AI - Głosy.md` + `strings/voices_ai.json` 81 mapowań — generowany na końcu gdy grywalne.
 
-## Faza A — Mapy real `.map` w Edytorze OW (bloker publikacji — PÓŹNIEJ)
+## Faza A — Mapy real `.map` w Edytorze OW (bloker publikacji — ODBLOKOWANE)
 
-> `campaign.txt:17` wskazuje `maps/01_akt_I/01_ostatnia_iskra.map` ale na dysku tylko `01_ostatnia_iskra.map.txt` 1331B instrukcja fabularna. Bez Edytora nie da się zbudować binarki. **Status: Edytor jeszcze nie zainstalowany — instrukcje 15/15 gotowe, real `.map` dopiero gdy Edytor dostępny (później).** Bez tego mod nie startuje w grze, ale design/SAIL gotowe do pracy.
+> `campaign.txt:17` wskazuje `maps/01_akt_I/01_ostatnia_iskra.map` ale na dysku tylko `*.map.txt` instrukcje. **Status 2026-09-14: Edytor DOSTĘPNY — Steam `C:\Program Files (x86)\Steam\steamapps\common\Original War` (`ow_editorOGL_SGUI.exe`, XichtEd.exe). Instrukcje 15/15 mają listy stref SAIL 1:1. Budować od 01 + F9 SAIL po każdej.**
 
 - [ ] **A1** Zbudować `01_ostatnia_iskra.map` 72x72 `ruins+dust` wg `maps/01_akt_I/01_ostatnia_iskra.map.txt:1` + vault `01 Akt I/01 - Ostatnia Iskra.md` — koszary, HT 36,36, brama pn. #mapa #A
 - [ ] **A2** Zbudować `02_droga_przez_rdze.map` 96x48 `canyon` linear A→B + 5 wraków `maps/01_akt_I/02_droga_przez_rdze.map.txt:1` #mapa #A

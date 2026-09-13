@@ -24,7 +24,7 @@ SORT file.name ASC
 
 ## Faza 1 — Mapy indywidualne — INSTRUKCJE gotowe (real `.map` później)
 
-> Każda mapa osobny plik `.map` — zero reużycia. Rozmiary z [[00 - Mapy Przegląd|Mapy Przegląd]]. **Instrukcje `.map.txt` pod fabułę gotowe 1-15. Real `.map` binarne — dopiero gdy Edytor OW dostępny (brak Edytora teraz) — patrz [[01 - Plan Publikacji — Bez Wstydu#Faza A — Mapy real `.map` w Edytorze OW (bloker publikacji)|Faza A]].**
+> Każda mapa osobny plik `.map` — zero reużycia. Rozmiary z [[00 - Mapy Przegląd|Mapy Przegląd]]. **Instrukcje `.map.txt` pod fabułę gotowe 1-15 + listy stref SAIL. Real `.map` binarne — Edytor DOSTĘPNY (Steam OW) — patrz [[01 - Plan Publikacji — Bez Wstydu#Faza A — Mapy real `.map` w Edytorze OW (bloker publikacji)|Faza A]].**
 
 ### Akt I: Rozpad i Ucieczka — INSTRUKCJE
 - [x] `01_ostatnia_iskra.map.txt` 72x72 ruins — [[01 Akt I - Rozpad i Ucieczka/01 - Ostatnia Iskra|01 Ostatnia Iskra]] instrukcja fabularna 3 warianty — real `.map` później #mapa #akt-I #instrukcja
@@ -47,16 +47,18 @@ SORT file.name ASC
 - [x] `14_bitwa_w_kraterze.map.txt` 128x128 crater 3 ładunki — 3 poziomy silosy 30/60/80 — [[03 Akt III - Protokół Eos/14 - Bitwa w Kraterze|14 Krater]] — instrukcja — real później #mapa #akt-III #instrukcja
 - [x] `15_ostatni_świt.map.txt` 80x80 indoor_server filtr — 3 poziomy HP 1200/800/400 + 3 zakończenia — [[03 Akt III - Protokół Eos/15 - Ostatni Świt|15 Ostatni Świt]] — instrukcja — real później #mapa #akt-III #instrukcja
 
-## Faza 2 — Mechaniki core SAIL — DO ZROBIENIA PRZED MAPAMI (bez Edytora)
+## Faza 2 — Mechaniki core SAIL — ZWERYFIKOWANE vs prawdziwy OW (2026-09-14)
 
-> Można zrobić bez real `.map` — review kodu, placeholdery, sucha korekta.
+> Steam `C:\Program Files (x86)\Steam\steamapps\common\Original War` + sailbase.php (566 funkcji).
+> Szczegóły: [[99 Mechaniki SAIL/05 - Zestaw Funkcji SAIL#Weryfikacja vs prawdziwy OW (2026-09-14, Steam + sailbase.php, 566 funkcji)|Cheat Sheet — Weryfikacja]].
 
-- [ ] **2.1** Paliwo `SetFuel` + `IsMoving` — `missions/02_misja.sail:42` placeholder `GetCollectedParts` → real loop + `fuel` 100 1/1/2 — bez Edytora #sail #przed-mapami
-- [ ] **2.2** Choroba pyłowa `IsInBuilding` + timer 12/15/9 min — `missions/03_misja.sail:1` weryfikacja `class_scientistic` vs `sailbase.php` #sail #przed-mapami
-- [ ] **2.3** SaveCharacters `Export/Import` + `SetGlobalVar rekrut_06` — `missions/01_misja.sail:1` + `06_misja.sail:1` test logiczny 01→02 bez mapy #sail #przed-mapami
-- [ ] **2.4** Anomalie 3 stałe typy zamiast RNG — `missions/09_misja.sail:1` placeholder `HasCooldown/GetHackedCount` → real `every` #sail #przed-mapami
-- [ ] **2.5** Indoor latarki `SetVisibility` + `CreateLight` — `missions/11_misja.sail:1` review 10/8/6 krat #sail #przed-mapami
-- [ ] **2.6** Balans 3 poziomów `difficulty` 0/1/2 — `missions/*_misja.sail` + `00 - Zasady Poziomy Trudności.md` — sucha tabela wartości #balans #przed-mapami
+- [x] **2.1** Paliwo silnikiem gry `SetFuel/GetFuel` (start 100/90/70) — `missions/02_misja.sail:1`, wraki area_wrak1..5 — do F9 #sail
+- [x] **2.2** Choroba pyłowa eventami `EnterBuilding/LeaveBuilding` + timery w sekundach — `missions/03_misja.sail:1` — do F9 #sail
+- [x] **2.3** Persistent `SaveCharacters` + branch `SaveVariable/TestVariable` (06→07-15) — do F9 #sail
+- [x] **2.4** Anomalie 3 stałe typy `ComMoveXY/ComStop` + cooldowny — `missions/09_misja.sail:1` — do F9 #sail
+- [x] **2.5** Indoor: oświetlenie map-side (SAIL nie ma `CreateLight`), patrole 6/10/14 — `missions/11_misja.sail:1` — do F9 #sail
+- [x] **2.6** Masówka API: `YouLost/Hint/SetLives/GetLives/uc_placement` 15 plików + `hc_face_number` + strefy `area_*` w instrukcjach map — do F9 #sail
+- [ ] **2.7** Kompilacja F9 wszystkich 15 SAIL w Edytorze — zebrać błędy, poprawić (flagi `F9` w kodzie) #sail #edytor
 
 ## Faza 3 — Implementacja misji SAIL
 
@@ -80,13 +82,13 @@ SORT file.name ASC
 
 > Przed mapami — sucha, po mapach — w grze.
 
-- [ ] **4.1** Suchy audit SAIL placeholdery `CountProfession/GetCollectedParts/GetHackedCount` → real implement #sail #przed-mapami
+- [x] **4.1** Audit placeholderów → real implement (cele `goal_state`, `Hint`, branch, overdue) #sail
 - [ ] **4.2** Korekta PL `ąćęłńóśźżć` w `campaign.txt:7` `characters.txt:21` `strings/texts_pl.txt:1` + 0 `Włóczęga` poza Poprawkami #tekst #przed-mapami
-- [ ] **4.3** Solucje lista 15 PDF `docs/solucje/*.pdf` = SAIL wartości (80/70/50 itd.) — suchy cross-check #tekst #przed-mapami
+- [ ] **4.3** Solucje 15 PDF do REGENERACJI (mechaniki zmienione: SetFuel, sekundy, branch) — `docs/solucje/*.pdf` #tekst
 - [ ] **4.4** Voices 81 mapowań `strings/voices_ai.json:1` `male/female` + `russian/arabic PL` — odsłuch próbek 3/voice bez gry #dubbing #przed-mapami
-- [ ] **4.5** Avatary 16 faces `graphics/faces/*.bmp` 96x96 — generowanie AI per `06 Grafika/00 - Avatary - Specyfikacja.md` + `characters.txt:Face=` #grafika #przed-mapami #profesjonalizm
+- [ ] **4.5** Avatary: 16 twarzy w **XichtEd** (GUI) wg tabeli 1-16 `06 Grafika/00 - Avatary - Specyfikacja.md`, SAIL wpięty (`hc_gallery/hc_face_number`), id galerii do potwierdzenia po eksporcie #grafika #xichted
 - [ ] **4.6** (PO MAPACH) Przejście pełnej kampanii 5 żywych → A/B, 2 żywych → C [[03 Akt III - Protokół Eos/15 - Ostatni Świt|15]] #test #po-mapach
-- [ ] **4.7** (PO MAPACH) Balans paliwa/ammo między misjami (global var) + anomalie 10x + FPS 128x128 #test #po-mapach
+- [ ] **4.7** (PO MAPACH) Balans paliwa między misjami + anomalie 10x + FPS 128x128 #test #po-mapach
 
 ## Faza 5 — Publikacja Bez Wstydu (po audycie 2026-09-10)
 
@@ -98,13 +100,13 @@ SORT file.name ASC
 - [ ] **D** Korekta PL + terminologia 0 `Włóczęga` + solucje = SAIL + voices 81 odsłuch — `D1..D5` #tekst #publikacja
 - [ ] **E** Pakowanie `Protokol-Ziemia-Jalowa_v1.0` + `Version=1.0` — `E1..E4` #release #publikacja
 
-## Najbliższe 3 zadania PRZED MAPAMI (bez Edytora)
+## Najbliższe 3 zadania (Edytor + XichtEd DOSTĘPNE — Steam OW)
 
-- [ ] **NEXT 2.1** Dopracować `missions/02_misja.sail:42` + `03/09/11` placeholdery SAIL — sucha kompilacja bez map #next #przed-mapami
-- [ ] **NEXT 4.5** Wygenerować 16 awatarów `graphics/faces/*.bmp` 96x96 per `06 Grafika/00 - Avatary - Specyfikacja.md` — profesjonalizm jak inne mody #next #przed-mapami #grafika
-- [ ] **NEXT 4.2** Korekta PL + terminologia 0 `Włóczęga` w 15 SAIL + vault #next #przed-mapami
+- [ ] **NEXT A1** Zbudować `01_ostatnia_iskra.map` 72x72 w Edytorze (strefy: area_ewakuacja, area_dziennik) + F9 `01_misja.sail` #next #mapa
+- [ ] **NEXT 2.7** Kompilacja F9 02-15 po kolei, poprawki wg flag w kodzie #next #sail
+- [ ] **NEXT 4.5** 16 twarzy w XichtEd (tabela 1-16), eksport galerii, potwierdzić `hc_gallery` id #next #grafika
 
-> Real mapy `Faza 5 A` dopiero gdy Edytor OW dostępny — instrukcje `.map.txt` już gotowe 15/15.
+> Real mapy `Faza 5 A` ODBLOKOWANE — Edytor i XichtEd w Steam OW. Instrukcje `.map.txt` 15/15 mają listy stref SAIL.
 
 ---
 *Ostatnia aktualizacja: 2026-09-10 — powiązane: [[00 - Przegląd Kampanii|Przegląd Kampanii]] · [[00 - Mapy Przegląd|Mapy]] · [[99 Mechaniki SAIL/05 - Zestaw Funkcji SAIL|SAIL Cheat Sheet]]*
